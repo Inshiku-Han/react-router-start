@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Todo {
+  id    Int     @id @default(autoincrement())
+  title String
+  isDone  Boolean
+}
